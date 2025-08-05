@@ -1,0 +1,67 @@
+/* Minecraft-themed animations and effects */
+
+@keyframes pixelGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(74, 111, 40, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(74, 111, 40, 0.8);
+  }
+}
+
+@keyframes tileBuild {
+  from {
+    transform: scale(0) rotate(180deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.minecraft-tile {
+  animation: tileBuild 0.3s ease-out;
+}
+
+.minecraft-tile:hover {
+  animation: pixelGlow 2s ease-in-out infinite;
+}
+
+/* Smooth scroll behavior */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Video fallback styling */
+.video-fallback {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+/* Button hover effects */
+.minecraft-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.minecraft-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.minecraft-button:hover::before {
+  left: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .minecraft-tile {
+    animation-duration: 0.2s;
+  }
+}
